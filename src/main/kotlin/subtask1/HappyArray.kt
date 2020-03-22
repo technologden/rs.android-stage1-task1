@@ -1,9 +1,17 @@
 package subtask1
 
 class HappyArray {
-
-    // TODO: Complete the following function
     fun convertToHappy(sadArray: IntArray): IntArray {
-        throw NotImplementedError("Not implemented")
+        var mutableList = sadArray.toMutableList()
+        var index = 1
+        while (index < mutableList.size - 1){
+            if (index != 0 && mutableList[index] > mutableList[index - 1] + mutableList[index + 1]){
+                mutableList.removeAt(index)
+                index--
+            }else index ++
+        }
+
+        return mutableList.toIntArray()
+
     }
 }
